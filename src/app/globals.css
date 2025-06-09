@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    --scroll-behavior-duration: 10s; 
+    scroll-behavior: smooth;
+  }
+
+  .nav-item {
+    @apply px-4 py-1.5 rounded-full text-white/70 text-sm font-semibold hover:bg-white/10 hover:text-white transition duration-300;
+  }
+
+  .hero-ring {
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5;
+  }
+  /* Add keyframes for the move-left animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  /* Add keyframes for the move-right animation */
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply lg:max-w-5xl;
+  }
+  /* Utility class to apply move-left animation */
+  .move-left {
+    animation: marquee 40s linear infinite;
+  }
+  /* Utility class to apply move-right animation */
+  .move-right {
+    animation: marquee-right 40s linear infinite;
+  }
+  .testimonialMove_left {
+    animation: marquee 90s linear infinite;
+    animation-play-state: running;
+  }
+  /* Pauses the animation when hovering */
+  .testimonialMove_left:hover {
+    animation-play-state: paused;
+  }
+}
