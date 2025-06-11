@@ -75,6 +75,7 @@ export const ProjectsSection = ({ id }: ProjectsSectionProps) => {
           experiences"
         />
         <div className="flex flex-col mt-10 gap-20 md:mt-20 ">
+          // eslint-disable-next-line react/jsx-key
           {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
@@ -95,6 +96,7 @@ export const ProjectsSection = ({ id }: ProjectsSectionProps) => {
                   </h3>
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
+                    // eslint-disable-next-line react/jsx-key
                     {project.results.map((result) => (
                       <li className="flex gap-2 text-sm md:text-base text-white/50 ">
                         <CheckCircleIcon className="size-5 md:size-6" />
